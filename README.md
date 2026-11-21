@@ -1,32 +1,34 @@
 # Everything Must Go
 
-A responsive, static storefront for the `Everything-must-go` GitHub Pages site.
+The repository hosts a static storefront for the original **Garage Sale & Clearance Kit** digital product.
 
-## Launch steps
+## Product
 
-1. Edit `products.json` with real products, prices, categories, images, and availability.
-2. Add a real checkout URL to `CHECKOUT_URL` near the top of `app.js`.
-3. Replace `hello@golightlybuilt.com` in `index.html` if you use the mail fallback.
-4. Enable GitHub Pages:
-   - Open the repository **Settings** > **Pages**.
-   - Under **Build and deployment**, choose **Deploy from a branch**.
-   - Choose `main` and the `/ (root)` folder.
-5. Open the generated Pages URL and verify the site.
+The bundle includes:
 
-## Inventory format
+- A sale planning checklist
+- A three-pass pricing worksheet
+- An item inventory tracker
+- A sale-day plan
+- A closeout worksheet
 
-Each item in `products.json` supports:
-
-- `id`: unique stable identifier
-- `name`: display name
-- `description`: accurate product description
-- `price`: numeric USD price
-- `category`: category label
-- `image`: public image URL
-- `available`: `true` or `false`
-
-Do not add sample listings to a public launch. Verify ownership, condition, dimensions, shipping/pickup terms, taxes, and refund rules before taking payment.
+The source file is `garage-sale-clearance-kit.md`. Export or convert it to a PDF and upload the finished file to a Gumroad account before selling.
 
 ## Checkout
 
-This initial package is a local cart only. GitHub Pages cannot process payments or orders. A real payment service is required. Stripe Payment Links and Gumroad are possible providers, and must be configured under your own account.
+1. Create a free Gumroad account at https://gumroad.com
+2. Create a product named **Garage Sale & Clearance Kit** priced at **$12**
+3. Upload the PDF or bundle
+4. Copy the Gumroad product URL
+5. Replace `const CHECKOUT_URL = ''` in `app.js` with that URL
+
+## GitHub Pages
+
+In repository settings:
+
+1. Open **Settings** > **Pages**
+2. Select **Deploy from a branch**
+3. Choose `main` and `/ (root)`
+4. Save and wait for deployment
+
+No local server, database, paid hosting, or payment secret is required for the static storefront.

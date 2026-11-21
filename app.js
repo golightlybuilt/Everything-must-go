@@ -1,3 +1,7 @@
+// Create a Gumroad product and paste your Payment Link here before accepting orders.
+// Example: https://gumroad.com/l/your-product
+const CHECKOUT_URL = '';
+
 const productGrid = document.querySelector('#productGrid');
 const categoryList = document.querySelector('#categoryList');
 const searchInput = document.querySelector('#searchInput');
@@ -9,9 +13,6 @@ const cartBackdrop = document.querySelector('#cartBackdrop');
 const cartItems = document.querySelector('#cartItems');
 const cartCount = document.querySelector('#cartCount');
 const cartTotal = document.querySelector('#cartTotal');
-
-// Replace this with your Stripe Payment Link, Gumroad URL, or your own order endpoint.
-const CHECKOUT_URL = '';
 
 let products = [];
 let activeCategory = 'All';
@@ -36,9 +37,7 @@ async function loadProducts() {
 function renderCategories() {
   const categories = ['All', ...new Set(products.map(product => product.category))];
   categoryList.innerHTML = categories.map(category => `
-    <button class="category-button ${category === activeCategory ? 'active' : ''}" type="button" data-category="${escapeHtml(category)}">
-      ${escapeHtml(category)}
-    </button>
+    <button class="category-button ${category === activeCategory ? 'active' : ''}" type="button" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>
   `).join('');
 }
 
@@ -83,10 +82,13 @@ function renderCart() {
     </div>
   `).join('') : '<p>Your cart is empty.</p>';
 
+  const checkoutButton = document.querySelector('#checkoutButton');
   if (CHECKOUT_URL) {
-    const checkoutButton = document.querySelector('#checkoutButton');
     checkoutButton.href = CHECKOUT_URL;
     checkoutButton.textContent = 'Proceed to checkout';
+  } else {
+    checkoutButton.href = '#checkout';
+    checkoutButton.textContent = 'Checkout setup required';
   }
 }
 
