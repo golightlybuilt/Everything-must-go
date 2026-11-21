@@ -1,6 +1,5 @@
-// Create a Gumroad product and paste your Payment Link here before accepting orders.
-// Example: https://gumroad.com/l/your-product
-const CHECKOUT_URL = '';
+// Gumroad checkout link for the Garage Sale & Clearance Kit.
+const CHECKOUT_URL = 'https://golightly0.gumroad.com/l/ecxkp';
 
 const productGrid = document.querySelector('#productGrid');
 const categoryList = document.querySelector('#categoryList');
