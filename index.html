@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Everything Must Go — honest finds, useful goods, and clearout deals.">
+  <title>Everything Must Go</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Everything Must Go home">
+      <span class="brand-mark">EMG</span>
+      <span>Everything Must Go</span>
+    </a>
+    <button class="cart-button" type="button" id="cartButton" aria-expanded="false" aria-controls="cartDrawer">
+      Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">The clearout collection</p>
+      <h1>Useful things, ready for a new home.</h1>
+      <p>Browse the available collection. Choose an item, or use the contact link for local pickup and delivery questions.</p>
+    </section>
+
+    <section class="shop" aria-labelledby="shop-heading">
+      <div class="shop-toolbar">
+        <h2 id="shop-heading">Available now</h2>
+        <label class="search-wrap">
+          <span class="sr-only">Search products</span>
+          <input id="searchInput" type="search" placeholder="Search products">
+        </label>
+      </div>
+      <div class="category-list" id="categoryList" aria-label="Product categories"></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No products match that search.</p>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your cart</h2>
+      <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+      <a class="checkout-button" id="checkoutButton" href="mailto:hello@golightlybuilt.com?subject=Everything%20Must%20Go%20order" target="_blank" rel="noopener">Request checkout</a>
+      <p class="checkout-note">Set your real checkout link in <code>app.js</code> before accepting orders.</p>
+    </div>
+  </aside>
+  <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+
+  <footer>
+    <p>© <span id="year"></span> Golightly Built</p>
+  </footer>
+</body>
+</html>
