@@ -3,7 +3,7 @@ layout: none
 ---
 # Garage Sale & Clearance Kit
 
-## 1. Sale planning checklist
+# 1. Sale planning checklist
 
 - [ ] Choose date, rain plan, and public posting deadline
 - [ ] Decide pickup, delivery, payment, and safety rules
@@ -30,7 +30,7 @@ layout: none
 2. Reduce by roughly 20–30% when buyers lose interest or after a set period.
 3. Move unsold items to the donation or removal pile rather than carrying clutter forward.
 
-## 3. Item inventory tracker
+### 3. Item inventory tracker
 
 | ID | Item | Condition | Quantity | Ask | Sold | Payment | Buyer notes |
 |---|---|---|---:|---:|---:|---|---|
